@@ -11,6 +11,9 @@ set splitbelow splitright
 set title
 set ttimeoutlen=0
 set wildmenu
+set smartindent
+set autoindent
+set cursorline
 
 " Tabs size
 set expandtab
@@ -40,9 +43,9 @@ let &t_ZR="\e[23m"
 
 call plug#begin()
 " Appearance
-    Plug 'vim-airline/vim-airline'
+    Plug 'itchyny/lightline.vim'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+    Plug 'doums/darcula'
     
     " Utilities
     Plug 'sheerun/vim-polyglot'
@@ -59,10 +62,12 @@ call plug#begin()
 call plug#end()
 
 nnoremap <F5> :NERDTreeToggle<CR>
-" air-line
-let g:airline_powerline_fonts = 1
 
-:colorscheme jellybeans
+" lightline
+let g:lightline = { 'colorscheme': 'darculaOriginal' }
+
+colorscheme darcula
+
 
 
 
