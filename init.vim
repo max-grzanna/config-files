@@ -100,7 +100,7 @@ call plug#begin()
     Plug 'towolf/vim-helm'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-
+    Plug 'SirVer/ultisnips'
     " Completion / linters / formatters
     Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
     Plug 'plasticboy/vim-markdown'
@@ -114,3 +114,6 @@ nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<Cr>
 
 colorscheme papercolor
+let g:UltiSnipsExpandTrigger="<ü>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
