@@ -101,9 +101,13 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'SirVer/ultisnips'
-    " Completion / linters / formatters
-    Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
+
+    "markdown
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'plasticboy/vim-markdown'
+    Plug 'junegunn/goyo.vim'
+    " Completion / linters / formatters
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} 
     Plug 'andrewstuart/vim-kubernetes'
 
 
@@ -113,7 +117,14 @@ call plug#end()
 nnoremap <C-N> :NERDTreeToggle<CR>
 nnoremap <C-p> :Files<Cr>
 
-colorscheme papercolor
 let g:UltiSnipsExpandTrigger="<ü>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+colorscheme PaperColor
+
+"set markdown css (github like)
+let g:mkdp_markdown_css='github-markdown-light.css'
+"refresh on save
+let g:mkdp_refresh_slow=1
